@@ -8,10 +8,10 @@ import App from './App.vue'
 import router from './router'
 
 // 测试接口函数
-import { getCategory } from '@/apis/testAPI'
-getCategory().then(res=>{
-    console.log("测试接口函数",res)
-})
+// import { getCategory } from '@/apis/testAPI'
+// getCategory().then(res=>{
+//     console.log("测试接口函数",res)
+// })
 // 测试接口函数
 
 const app = createApp(App)
