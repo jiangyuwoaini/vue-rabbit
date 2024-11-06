@@ -4,6 +4,7 @@
 //导入方法
 import { useCategoryStore } from '@/stores/category'
 const categoryStore = useCategoryStore()
+console.log("1234553434111111111",categoryStore);
 </script>
 
 <template>
@@ -18,7 +19,7 @@ const categoryStore = useCategoryStore()
                 </li>
                 <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
                     <RouterLink active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
-                </li>
+                </li><!-- active-class="active" 是激活点击状态-->
             </ul>
             <div class="search">
                 <i class="iconfont icon-search"></i>

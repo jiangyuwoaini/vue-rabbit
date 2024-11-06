@@ -13,9 +13,9 @@ import { onMounted } from 'vue'
 
 <template>
     <LayoutFixed />
-    <LayoutNav/> 
+    <!-- <LayoutNav/>  -->
     <LayoutHeader/> 
-    <LayoutFooter/> 
     <!-- 二级路由出口 -->
     <RouterView />
+    <LayoutFooter/> 
 </template>

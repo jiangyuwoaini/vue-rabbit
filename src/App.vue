@@ -3,18 +3,10 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <!-- <RouterLink to="/example">练习1</RouterLink> -->
-        <!-- <RouterLink to="/sonCom">父子间传子组件的练习1</RouterLink> -->
-        <!-- 一级路由出口 -->
-        <RouterView />
-      </nav>
-    </div>
-  </header>
-
-
+  <!-- <RouterLink to="/example">练习1</RouterLink> -->
+  <!-- <RouterLink to="/sonCom">父子间传子组件的练习1</RouterLink> -->
+  <!-- 一级路由出口 -->
+  <RouterView />
 </template>
 
 <style scoped>
