@@ -5,14 +5,14 @@ import { getDetail } from '@/apis/detail';
 import { ref, onMounted } from 'vue'
 import { useRoute } from "vue-router";
 import { ElMessage } from 'element-plus'
-// import { useCartStore } from '@/stores/cartStore';
+import { useCartStore } from '@/stores/cartStore';
 
-// const cartStore = useCartStore()
+const cartStore = useCartStore()
 const route = useRoute()
 const goods = ref({})
 const getGoods = async () => {
     const res = await getDetail(route.params.id)
-    goods.value = res.data.result
+    goods.value = res.result
 }
 
 onMounted(() => {
@@ -31,25 +31,25 @@ const count = ref(1)
 const countChange = (count) => {
     console.log(count);
 }
-//添加购物车
-// const addCart = () => {
-//     if (skuObj.skuId) {
-//         //规格已经选择 触发action
-//         cartStore.addCart({
-//             id: goods.value.id,
-//             name: goods.value.name,
-//             picture: goods.value.mainPictures[0],
-//             price: goods.value.price,
-//             count: count.value,
-//             skuId: skuObj.skuId,
-//             attrsText: skuObj.specsText,
-//             selected: true
-//         })
-//     } else {
-//         //规格没有选择 提示用户
-//         ElMessage.warning('请选择规格')
-//     }
-// }
+// 添加购物车
+const addCart = () => {
+    if (skuObj.skuId) {
+        //规格已经选择 触发action
+        cartStore.addCart({
+            id: goods.value.id,
+            name: goods.value.name,
+            picture: goods.value.mainPictures[0],
+            price: goods.value.price,
+            count: count.value,
+            skuId: skuObj.skuId,
+            attrsText: skuObj.specsText,
+            selected: true
+        })
+    } else {
+        //规格没有选择 提示用户
+        ElMessage.warning('请选择规格')
+    }
+}
 </script>
 
 <template>

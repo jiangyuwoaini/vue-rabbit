@@ -11,7 +11,7 @@ const props = defineProps({
     }
 })
 
-const TITLEMAP = {
+const TITLEMAP = { //map类型
     1: '24小时热榜',
     2: '周热榜',
 }
@@ -25,7 +25,8 @@ const getHostList = async () => {
         id: route.params.id,
         type: props.type
     })
-    hotList.value = res.data.result 
+    // console.log("啊啊啊啊啊啊啊啊啊啊啊啊啊啊",res);
+    hotList.value = res.result 
 }
 onMounted(() => {
     getHostList()

@@ -1,10 +1,9 @@
 <script setup>
-// import HeaderCart from './HeaderCart.vue'
+import HeaderCart from './HeaderCart.vue'
 
 //导入方法
 import { useCategoryStore } from '@/stores/category'
 const categoryStore = useCategoryStore()
-console.log("1234553434111111111",categoryStore);
 </script>
 
 <template>
@@ -134,5 +133,4 @@ console.log("1234553434111111111",categoryStore);
         }
     }
 }
-</style>
-<!-- =@/stores/categoryStore@/stores/categoryStore -->
+</style>@/stores/categoryStore@/stores/categoryStore

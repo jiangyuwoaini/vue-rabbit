@@ -8,8 +8,7 @@ export function useCategory() {
     const route = useRoute()
     const getCategoryData = async (id) => {
         const res = await getCategoryAPI(id)
-        console.log(res);
-        categoryData.value = res.data.result
+        categoryData.value = res.result
     }
 
     onMounted(() => {

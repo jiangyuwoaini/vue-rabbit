@@ -2,12 +2,8 @@
 // vueUse
 import { useScroll } from '@vueuse/core'
 import { useCategoryStore } from '@/stores/category'
-
     const { y } = useScroll(window)
     const categoryStore = useCategoryStore()
-    // console.log("1234553434",categoryStore.categoryList);
-
-    
 </script>
 
 <template>

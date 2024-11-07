@@ -9,7 +9,7 @@ const categoryData = ref({})
 const route = useRoute() //获取路由对象信息
 const getCategoryData = async () => { // 实现二级面包屑功能
     const res = await getCategoryFilterAPI(route.params.id)
-    categoryData.value = res.data.result
+    categoryData.value = res.result
 }
 onMounted(() => {
     getCategoryData()
@@ -26,7 +26,7 @@ const reqData = ref({
 
 const getGoodList = async () => {
     const res = await getSubCategoryAPI(reqData.value)
-    goodList.value = res.data.result.items
+    goodList.value = res.result.items
 }
 onMounted(() => {
     getGoodList()
@@ -40,15 +40,15 @@ const tabChange = () => {
 }
 
 //加载更多，实现无限下拉    
-const disabled = ref(false)
+let disabled = ref(false)
 const load = async () => {
     console.log("加载更多数据")
     //获取下一页数据
     reqData.value.page++
     const res = await getSubCategoryAPI(reqData.value)
-    goodList.value = [...goodList.value, ...res.data.result.items] //将新老数据拼接
+    goodList.value = [...goodList.value, ...res.result.items] //将新老数据拼接
     
-    if (res.data.result.items === 0) {  //没有数据,就禁用
+    if (res.result.items === 0) {  //没有数据,就禁用
         disabled = true
     }
 }

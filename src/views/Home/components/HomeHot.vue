@@ -6,8 +6,7 @@ import { findHotAPI } from '@/apis/home'
 const hotList = ref([])
 const getHotList = async() => {
     const res = await findHotAPI()
-    console.log(res)
-    hotList.value = res.data.result
+    hotList.value = res.result
 }
 
 onMounted(() => {

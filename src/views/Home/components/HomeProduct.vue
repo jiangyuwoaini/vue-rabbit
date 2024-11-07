@@ -7,7 +7,7 @@ import { ref, onMounted } from 'vue';
 const goodsProduct = ref([])
 const getGoodList = async () => {
     const res = await getGoodsAPI()
-    goodsProduct.value = res.data.result
+    goodsProduct.value = res.result
 }
 
 onMounted(() => {

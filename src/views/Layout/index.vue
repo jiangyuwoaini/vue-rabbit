@@ -13,7 +13,7 @@ import { onMounted } from 'vue'
 
 <template>
     <LayoutFixed />
-    <!-- <LayoutNav/>  -->
+    <LayoutNav/> 
     <LayoutHeader/> 
     <!-- 二级路由出口 -->
     <RouterView />
